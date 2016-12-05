@@ -1,27 +1,39 @@
 # Angular project's README
 
-HTML
-CSS
-Javascript
+Step 2:
 
-we all know how to create an html page.
-here are two html pages
+Two way binding in angular app
 
-angularapp.html - simple html page without angular features
-index.html - simple html page with angular feature enabled
+we can add field into an angular app through html and js
 
-looking at these and figure out the differences..
+this is called as two way binding since we can change either in html and js, the last change will effect at both sides
 
-by adding "<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>" into your html page's
-head lets u to include "Angular" features to your page
+in this example , we just created an angular app by this piece of code
 
-By including Angular into our html page , we can use pleanty of inbuilt angular tags in our page
-Allmost all angular tags starts with "ng-" . 
-In our example you will see the following angular tags:
+	var app = angular.module('myApp', []); 
 
-1.ng-app -  decleration of angular application
-2.ng-model - decleration of angular moodel
+After having an app called 'myApp' , we should create a controller for the app which will control the app
+this can be implemented by writing following lines of codes 
 
-Please dont think what is angular application and what is angular model right now.. :)
+	app.controller('myCtrl', function($scope) {
+    $scope.firstName= "John";  // here on the time of loading we binded variable 'firstname' to 'John'
+    $scope.lastName= "Doe";
+	}); 
 
-Let me know after u guyz figure out the deifferences with these two html files :)
+in the above syntax, contorller name is user dependent .. here it is 'myCtrl'
+argument inside the function() , i.e $scope
+->Scope is an object that refers to the application model
+
+
+Task :
+add this to controller
+
+
+$scope.sayHello = function() {
+    $scope.greeting = 'Hello ' + $scope.username + '!';
+  };
+
+ and put a button in html and  link with this greeting
+ and display the result below the Fullname
+
+:)
